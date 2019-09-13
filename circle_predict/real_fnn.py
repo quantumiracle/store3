@@ -58,9 +58,7 @@ while(True):
     
     norm_pos=Norm(contour_centers)
 
-    norm2sim=0.5674
-    norm_pos_sim=norm_pos*norm2sim  # transform norm to sim
-    norm_pos_=norm_pos_sim.reshape(-1) # ((x,y), (x,y),,) -> ((x,x,,),(y,y,,))
+    norm_pos_=norm_pos.reshape(-1) # ((x,y), (x,y),,) -> ((x,x,,),(y,y,,))
     predict = classifier.predict_one_value(norm_pos_)[0]
 
     # plot_list_new(norm_pos, cnt, colli_pos) 
